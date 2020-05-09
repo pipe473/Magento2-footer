@@ -128,9 +128,9 @@
 
         <!-- *********** FOOTER CONTAINER LINKS ************** -->
 
-        <referenceContainer name="footer-container-links">
+        <!-- <referenceContainer name="footer-container-links">
             <block class="Magento\Theme\Block\Html\Footer" name="footer-container-links" template="html/footer.phtml"/>
-        </referenceContainer>
+        </referenceContainer> -->
 
         <!-- *********** BUTTON GOING TO TOP ************** -->
 
@@ -140,7 +140,7 @@
 
 
         <!-- *********** EN PERIODO DE PRUEBAS ************** -->
-        <referenceBlock name="form.subscribe" remove="false" />
+        <referenceBlock name="form.subscribe" remove="true" />
 
 
         <referenceBlock name="wish-list-link" remove="true" />
@@ -148,7 +148,7 @@
         <referenceBlock name="register-link" remove="true"  /> 
         <referenceBlock name="related.post.tab" remove="true" />
         <referenceBlock name="my-account-link" remove="true" /><!--for My Account Link-->
-        <referenceBlock name="form.subscribe" remove="false" />
+        <referenceBlock name="form.subscribe" remove="true" />
         <referenceBlock name="report.bugs" remove="true"/>
         <referenceBlock name="reviews.tab" remove="true" />
         <referenceBlock name="product.review.form" remove="true" />
