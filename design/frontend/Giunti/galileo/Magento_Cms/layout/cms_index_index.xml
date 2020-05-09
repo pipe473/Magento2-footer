@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * cms_index_index.xml
+ *
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ * 
+ * This file only is displayed on the homepage of magento
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceBlock name="content">
+        <block class="Magento\Cms\Block\Block" name="GT_slides_static">
+            <arguments>
+                <argument name="2" xsi:type="string">GT_slides_static</argument>
+            </arguments>
+        </block>
+        <block class="Magento\Cms\Block\Block" name="GT_banners_block">
+            <arguments>
+                <argument name="6" xsi:type="string">GT_banners_block</argument>
+            </arguments>
+        </block>
+        <block class="Magento\Cms\Block\Block" name="GT_newsletter_block" before="footer">
+            <arguments>
+                <argument name="1" xsi:type="string">GT_newsletter_block</argument>
+            </arguments>
+        </block>
+    </referenceBlock>
+    <body/>
+</page>

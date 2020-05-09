@@ -1,0 +1,187 @@
+//
+// Custom Media Breakpoints
+// ----------------------------------------------
+//@screen__xxl: 1600px;
+//@screen__sm: 700px;
+//
+////
+////  Style groups for 'desktop' devices
+////  ---------------------------------------------
+//
+//& when (@media-target = 'desktop'), (@media-target = 'all') {
+//  @media all and (min-width: @screen__xxl),
+//  print {
+//    .media-width('min', @screen__xxl);
+//  }
+//}
+//
+////
+////  Style groups for 'mobile' devices
+////  ---------------------------------------------
+//
+//& when (@media-target = 'mobile'), (@media-target = 'all') {
+//  @media only screen and (max-width: (@screen__sm - 1)) {
+//    .media-width('max', @screen__sm);
+//  }
+//}
+@import (reference) "../source/lib/variables/_responsive.less";
+@import (reference) "../source/lib/_responsive.less";
+
+@color-primary: #0f78b9;
+@color-secondary: #7cbce4;
+@color-yellow-grey: #0f78b9;
+@color-grey-1: #0f78b9;
+@active__color: @color-secondary;
+
+@header-panel__background-color: @color-primary;
+@navigation-level0-item__color: #fff;
+@_nav-level0-item-color-active: #fff;
+@navigation-desktop-level0-item__color: #fff;
+@navigation-desktop-level0-item__active__color: #000;
+@navigation-level0-item__active__border-color: #fff;
+@navigation-desktop-level0-item__active__border-color: #fff;
+@navigation__background: rgb(16, 63, 120);
+@navigation-desktop__font-weight: @font-weight__heavier;
+@navigation-desktop-level0-item__hover__color: @color-secondary;
+@submenu-desktop-item__color: rgb(34, 34, 34);
+
+
+
+//
+//  Buttons variables
+//  _____________________________________________
+
+//
+//  Buttons
+//  ---------------------------------------------
+
+//  Font style
+@button__font-family: @font-family__regular;
+@button__font-weight: @font-weight__heavier;
+@button__padding: 7px 15px; // is set up to false when buttons don't depend on side paddings or have fixed width
+
+//  Primary button
+@button-primary__background: @color-primary;
+@button-primary__border: 1px solid @color-primary;
+@button-primary__color: @color-white;
+
+@button-primary__hover__background: darken(@color-secondary, 10%);
+@button-primary__hover__border: 1px solid darken(@color-secondary, 15%);
+
+@button-primary__active__background: @button-primary__hover__background;
+@button-primary__active__border: @button-primary__hover__border;
+@button-primary__active__color: @button-primary__color;
+
+
+//  Default = secondary button
+@button__color: @primary__color;
+@button__background: @color-white;
+@button__border: 1px solid @color-grey-1;
+
+@button__hover__color: @color-secondary;
+@button__hover__background: @color-white;
+@button__hover__border: 1px solid @color-secondary;
+
+@button__active__color: @button__color;
+@button__active__background: @button__hover__background;
+@button__active__border: @button__border;
+
+
+//  Large button
+@button__font-size__l: @font-size__l;
+@button__line-height__l: @font-size__l + 4;
+@button__padding__l: 10px 30px;
+
+//  Header
+@header__background-color: #fff;
+@header-icons-color: @color-primary;
+@header-icons-color-hover: @color-secondary;
+
+// Minicart
+@minicart-icons-color: @color-primary;
+@minicart-icons-color-hover: @color-secondary;
+@button__shadow: inset 0 2px 1px rgba(0,0,0,.12);
+
+
+//
+//  Links
+//  ---------------------------------------------
+@link__color: #000;
+@link__text-decoration: none;
+@link__visited__color: @link__color;
+@link__hover__color: @color-secondary;
+@link__active__color: @active__color;
+
+//  Fonts
+@font-family-name__base: 'Roboto';
+@font-family-name__regular: 'Montserrat';
+@font-family__base: @font-family-name__base, @font-family__sans-serif;
+@font-family__condensed: 'Roboto Condensed', 'Helvetica Condensed', 'Arial Narrow', Arial, sans-serif;
+@font-family__regular: 'Montserrat', 'Tahoma', 'Open sans', Arial, sans-serif;
+
+.navigation {
+  font-family: @font-family__regular;
+  .level0 {
+    &.active,
+    &.has-active {
+      > .level-top {
+          color:#ffff;
+      }
+    }
+  }
+}
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  
+  .button-container {
+    //margin-bottom: 20px;
+    .action, a.action.button {
+      margin-left: 5px;
+    }
+  }
+  //
+  // Buttons
+  // ---------------------------------------------
+  a.action, button {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    border-radius: 3px;
+  }
+
+  a.action.advanced {
+    color: @color-primary;
+    padding-right: 1rem;
+    font-size: 1rem;
+    }
+
+
+  //
+  // Secondary button
+  // ---------------------------------------------
+  a.action.button {
+    .lib-link-as-button();
+    .lib-button();
+
+    background-color: @color-primary;
+    border: 1px solid @color-grey-1;
+    color: @color-primary;
+    box-shadow: 3px 3px @color-gray80;
+  }
+}
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  //
+  // Large button
+  // ---------------------------------------------
+  a.action.large {
+    .lib-button-l();
+  }
+}

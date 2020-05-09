@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+    <!--***************** HEADER CLASS *******************-->
+
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+
+        <!-- *********** LOGO ************** -->
+        
+
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">270</argument>
+                <argument name="logo_img_height" xsi:type="number">79</argument>
+            </arguments>
+        </referenceBlock>
+
+
+        <!-- *********** HEADER LINKS DEFINITION ************** -->
+
+        <referenceBlock name="header.links"> 
+
+        <!--  PLATFORM ACCES LINK AND POSITION -->
+
+              <block class="Magento\Framework\View\Element\Html\Link" name="acceso.link" before="about-us.link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Acceso a la plataforma</argument>
+                    <argument name="path" xsi:type="string" translate="true">acceso-plataforma</argument>
+                </arguments>
+            </block>
+
+            <!--  ABOUT US LINK AND POSITION -->
+
+            <block class="Magento\Framework\View\Element\Html\Link" name="about-us.link" before="newsletter.link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Quiénes somos</argument>
+                    <argument name="path" xsi:type="string" translate="true">about-us</argument>
+                </arguments>
+            </block>
+
+            <!--  NEWSLETTER LINK AND POSITION -->
+
+            <block class="Magento\Framework\View\Element\Html\Link" name="newsletter.link" after="about-us.link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="false">Newsletter</argument>
+                    <argument name="path" xsi:type="string" translate="false">newsletter</argument>
+                </arguments>
+            </block>
+
+            <!-- CONTACT US LINK AND POSITION -->
+
+            <block class="Magento\Framework\View\Element\Html\Link" name="contact-us.link" after="newsletter-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="false">Contacto</argument>
+                    <argument name="path" xsi:type="string" translate="false">contacto</argument>
+                </arguments>
+            </block>
+
+
+            <!-- HELP LINK AND POSITION -->
+
+            <!-- <block class="Magento\Framework\View\Element\Html\Link" name="help.link" after="contact-us.link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="false">Ayuda</argument>
+                    <argument name="path" xsi:type="string" translate="false">help</argument>
+                </arguments>
+            </block> -->
+        </referenceBlock>
+
+
+        <!-- *********** HEADER WRAPPERS LINKS ************** -->
+
+        <!-- LOGIN LINK AND POSITION -->
+
+        <referenceContainer name="header-wrapper">
+                <block class="Magento\Framework\View\Element\Html\Link" name="login.link" after="top.search">
+                    <arguments>
+                        <argument name="class" xsi:type="string" translate="false">login</argument>
+                        <argument name="label" xsi:type="string" translate="false">Login/</argument>
+                        <argument name="path" xsi:type="string" translate="false">customer/account/login</argument>
+                    </arguments>
+                </block>
+
+                <!-- LOGOUT LINK AND POSITION -->
+
+                <!-- <block class="Magento\Framework\View\Element\Html\Link" name="logout.link" after="login.link">
+                    <arguments>
+                        <argument name="class" xsi:type="string" translate="false">logout</argument>
+                        <argument name="label" xsi:type="string" translate="false">Logout/</argument>
+                        <argument name="path" xsi:type="string" translate="false">customer/account/logout</argument>
+                    </arguments>
+                </block> -->
+
+                <!-- REGISTER LINK AND POSITION -->
+
+                <block class="Magento\Framework\View\Element\Html\Link" name="register.link" after="login.link">
+                    <arguments>
+                        <argument name="class" xsi:type="string" translate="false">register</argument>
+                        <argument name="label" xsi:type="string" translate="false">Registro</argument>
+                        <argument name="path" xsi:type="string" translate="false">customer/account/create</argument>
+                    </arguments>
+                </block>
+
+                <!-- WISHLIST LINK AND POSITION -->
+
+                <block class="Magento\Framework\View\Element\Html\Link" name="wishlist.link" after="register.link">
+                    <arguments>
+                        <argument name="class" xsi:type="string" translate="false">wishlist.link</argument>
+                        <argument name="label" xsi:type="string" translate="false">wishlist</argument>
+                        <argument name="path" xsi:type="string" translate="false">wishlist</argument>
+                    </arguments>
+                </block>
+        </referenceContainer>
+
+        <!-- *********** ADD NAV LINK ************** -->
+
+            <referenceBlock name="catalog.topnav">
+                <block name="custom.menu.links" template="Magento_Theme::html/topmenu_uden.phtml"/>
+            </referenceBlock>
+
+        <!-- *********** FOOTER CONTAINER LINKS ************** -->
+
+        <referenceContainer name="footer-container-links">
+            <block class="Magento\Theme\Block\Html\Footer" name="footer-container-links" template="html/footer.phtml"/>
+        </referenceContainer>
+
+        <!-- *********** BUTTON GOING TO TOP ************** -->
+
+        <referenceContainer name="before.body.end">
+             <block name="magefan.go.to.top" template="Magento_Theme::gototop.phtml" />
+        </referenceContainer>
+
+
+        <!-- *********** EN PERIODO DE PRUEBAS ************** -->
+        <referenceBlock name="form.subscribe" remove="false" />
+
+
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="authorization-link" remove="true" />
+        <referenceBlock name="register-link" remove="true"  /> 
+        <referenceBlock name="related.post.tab" remove="true" />
+        <referenceBlock name="my-account-link" remove="true" /><!--for My Account Link-->
+        <referenceBlock name="form.subscribe" remove="false" />
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="reviews.tab" remove="true" />
+        <referenceBlock name="product.review.form" remove="true" />
+        <referenceBlock name="product.info.review" remove="true" />
+        <move element="copyright" destination="before.body.end"/>
+    </body>
+</page>
